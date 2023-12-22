@@ -8,15 +8,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import utils.utilSetting;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class base {
     protected static WebDriver driver;
 
     protected void getDriver() {
-        String browser = "chrome";
+        String browserName = System.getenv("browserName");
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browserName == null) {
+            browserName = "CHROME";
+        }
+
+        if (Objects.equals(browserName,"CHROME")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             options.addArguments("--no-sandbox");
@@ -25,13 +30,13 @@ public class base {
 
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("firefox")) {
+        } else if (Objects.equals(browserName,"FIREFOX")) {
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
 
             driver = new FirefoxDriver(options);
         } else {
-            throw new IllegalArgumentException("Invalid browser choice: " + browser);
+            throw new IllegalArgumentException("Invalid browser choice: ");
         }
 
         driver.manage().timeouts().pageLoadTimeout(utilSetting.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
