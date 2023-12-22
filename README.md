@@ -44,6 +44,6 @@ These commands will run the Cucumber tests with the specified configurations and
 2. target : from Cucumber
 3. allure framework : The report can be obtained after running the tests and will be located in build/allure-reports.
 
-![Screenshot CSV reports from allure framework](https://drive.google.com/file/d/1D4XMWsrD13Rs6r0223mgZ4eekR4acT4d/view?usp=sharing)
+![Screenshot CSV reports from allure framework](https://drive.google.com/uc?export=download&id=1D4XMWsrD13Rs6r0223mgZ4eekR4acT4d)
 
 
