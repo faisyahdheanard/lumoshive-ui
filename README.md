@@ -42,7 +42,11 @@ These commands will run the Cucumber tests with the specified configurations and
 ## Report path
 1. test-output(in automation folder)
 2. target : from Cucumber
-3. allure framework : The report can be obtained after running the tests and will be located in build/allure-reports.
+3. allure framework : The report can be obtained after running the tests and will be located in build/allure-reports or using command:
+```
+allure serve build/allure-reports
+```
+
 
 
 Screenshot CSV reports from allure framework
